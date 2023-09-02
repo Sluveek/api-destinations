@@ -19,7 +19,7 @@ CLOUDINARY_STORAGE = {
     "API_KEY": "371584321444324",
     "API_SECRET": "-_m9qMb3BFnF08Fyz505aHVAUh8",
 }
-print("cloudinary", CLOUDINARY_STORAGE)
+
 MEDIA_URL = "/media/"
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
@@ -49,6 +49,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'cloudinary_storage',
     'django.contrib.staticfiles',
+    'cloudinary',
+
+    'profiles',
 ]
 
 MIDDLEWARE = [
