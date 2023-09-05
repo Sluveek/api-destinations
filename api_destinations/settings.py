@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import re
 import dj_database_url
 
 CLOUDINARY_STORAGE = {
@@ -73,7 +74,7 @@ SECRET_KEY = os.environ.get(
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "api-destinations-941abf2d2aea.herokuapp.com",
+    os.environ.get("ALLOWED_HOST"),
     "localhost",
     "192.168.178.90",
     "127.0.0.1",
@@ -133,9 +134,13 @@ if "CLIENT_ORIGIN" in os.environ:
     CORS_ALLOWED_ORIGINS = [
         "http://localhost:3000",
         "http://localhost:8080",]
+if 'CLIENT_ORIGIN_DEV' in os.environ:
+    extracted_url = re.match(
+        r'^.+-', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE
+    ).group(0)
 else:
     CORS_ALLOWED_ORIGIN_REGEXES = [
-        r"^https://.*\.gitpod\.io$",
+        rf"{extracted_url}(eu|us)\d+\w\.gitpod\.io$",
     ]
 """
 CORS_ALLOW_CREDENTIALS = True
