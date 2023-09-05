@@ -73,7 +73,7 @@ SECRET_KEY = os.environ.get(
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "https://api-destinations-941abf2d2aea.herokuapp.com",
+    "api-destinations-941abf2d2aea.herokuapp.com",
     "localhost",
     "192.168.178.90",
     "127.0.0.1",
