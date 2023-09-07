@@ -79,6 +79,7 @@ ALLOWED_HOSTS = [
     "http://127.0.0.1:8000",
 ]
 
+print(os.environ.get("ALLOWED_HOSTS"))
 
 # Application definition
 
