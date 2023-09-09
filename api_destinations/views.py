@@ -14,7 +14,7 @@ def root_route(request):
 
 
 # dj-rest-auth logout view fix
-@api_view(["POST", "GET")
+@api_view(["POST", "GET"])
 def logout_route(request):
     response = Response()
     response.set_cookie(
