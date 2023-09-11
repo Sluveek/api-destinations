@@ -76,7 +76,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     os.environ.get("ALLOWED_HOST"),
     "localhost",
-    "http://127.0.0.1:8000",
+    "127.0.0.1",
 ]
 
 # Application definition
