@@ -75,6 +75,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     os.environ.get("ALLOWED_HOST"),
+    os.environ.get("CLIENT_ORIGIN"),
     "localhost",
     "127.0.0.1",
 ]
